@@ -1,0 +1,1591 @@
+ScriptsOnlyBuild:
+  usedScripts:
+    Assembly-CSharp.dll:
+    - ASL.ASLObject
+    - ASL.ASLSceneLoader
+    - ASL.ASLSliderWithEcho
+    - ASL.GameController
+    - ASL.GameSparksManager
+    - ASL.LobbyManager
+    - ASL.QuickConnect
+    - AnchorController
+    - DeleteObject
+    - FloorCaptureController
+    - FloorIllusionController
+    - FloorIllusionController_Chunk
+    - FloorIllusionController_Pit
+    - FloorIllusionController_PitMover
+    - FloorUIController
+    - GameSparksSettings
+    - GameSparksUnity
+    - GoogleARCore.ARCoreBackgroundRenderer
+    - GoogleARCore.ARCoreCameraConfigFilter
+    - GoogleARCore.ARCoreSession
+    - GoogleARCore.ARCoreSessionConfig
+    - GoogleARCore.EnvironmentalLight
+    - GoogleARCore.Examples.Common.DetectedPlaneVisualizer
+    - GoogleARCore.Examples.Common.PlaneDiscoveryGuide
+    - GoogleARCore.Examples.Common.PointcloudVisualizer
+    - GoogleARCore.Examples.Common.RawImageVideoPlayer
+    - GroupMovement
+    - InitialController
+    - PickupObject
+    - PitSpinner
+    - ProjectorFieldScaler
+    - WorldOriginHelper
+    Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.SceneViewGridManager
+    - UnityEditor.Tilemaps.TileDragAndDropManager
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.SpatialTracking.dll:
+    - UnityEngine.SpatialTracking.TrackedPoseDriver
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.RawImage
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
+  sceneClasses:
+    Assets/ASL/ASL_Scenes/ASL_LobbyScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9808}
+    - Class: 114
+      Script: {instanceID: 10062}
+    - Class: 114
+      Script: {instanceID: 10068}
+    - Class: 114
+      Script: {instanceID: 10096}
+    - Class: 114
+      Script: {instanceID: 10176}
+    - Class: 114
+      Script: {instanceID: 10456}
+    - Class: 114
+      Script: {instanceID: 10582}
+    - Class: 114
+      Script: {instanceID: 10874}
+    - Class: 114
+      Script: {instanceID: 11136}
+    - Class: 114
+      Script: {instanceID: 11348}
+    - Class: 114
+      Script: {instanceID: 11600}
+    - Class: 114
+      Script: {instanceID: 11684}
+    - Class: 114
+      Script: {instanceID: 11700}
+    - Class: 114
+      Script: {instanceID: 11744}
+    - Class: 114
+      Script: {instanceID: 12160}
+    - Class: 114
+      Script: {instanceID: 12184}
+    - Class: 114
+      Script: {instanceID: 12206}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    Assets/ASL/ASL_Scenes/ASL_SceneLoader.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9808}
+    - Class: 114
+      Script: {instanceID: 10062}
+    - Class: 114
+      Script: {instanceID: 10096}
+    - Class: 114
+      Script: {instanceID: 10166}
+    - Class: 114
+      Script: {instanceID: 10582}
+    - Class: 114
+      Script: {instanceID: 11684}
+    - Class: 114
+      Script: {instanceID: 12184}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    Assets/UserFiles/AR_Illusions.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9808}
+    - Class: 114
+      Script: {instanceID: 9928}
+    - Class: 114
+      Script: {instanceID: 9960}
+    - Class: 114
+      Script: {instanceID: 9972}
+    - Class: 114
+      Script: {instanceID: 9990}
+    - Class: 114
+      Script: {instanceID: 10062}
+    - Class: 114
+      Script: {instanceID: 10096}
+    - Class: 114
+      Script: {instanceID: 10102}
+    - Class: 114
+      Script: {instanceID: 10128}
+    - Class: 114
+      Script: {instanceID: 10264}
+    - Class: 114
+      Script: {instanceID: 10486}
+    - Class: 114
+      Script: {instanceID: 10498}
+    - Class: 114
+      Script: {instanceID: 10514}
+    - Class: 114
+      Script: {instanceID: 10568}
+    - Class: 114
+      Script: {instanceID: 10582}
+    - Class: 114
+      Script: {instanceID: 10790}
+    - Class: 114
+      Script: {instanceID: 10796}
+    - Class: 114
+      Script: {instanceID: 10854}
+    - Class: 114
+      Script: {instanceID: 10996}
+    - Class: 114
+      Script: {instanceID: 11070}
+    - Class: 114
+      Script: {instanceID: 11136}
+    - Class: 114
+      Script: {instanceID: 11160}
+    - Class: 114
+      Script: {instanceID: 11326}
+    - Class: 114
+      Script: {instanceID: 11404}
+    - Class: 114
+      Script: {instanceID: 11414}
+    - Class: 114
+      Script: {instanceID: 11472}
+    - Class: 114
+      Script: {instanceID: 11508}
+    - Class: 114
+      Script: {instanceID: 11530}
+    - Class: 114
+      Script: {instanceID: 11558}
+    - Class: 114
+      Script: {instanceID: 11684}
+    - Class: 114
+      Script: {instanceID: 11800}
+    - Class: 114
+      Script: {instanceID: 11856}
+    - Class: 114
+      Script: {instanceID: 12000}
+    - Class: 114
+      Script: {instanceID: 12178}
+    - Class: 114
+      Script: {instanceID: 12184}
+    - Class: 114
+      Script: {instanceID: 12218}
+    - Class: 114
+      Script: {instanceID: 12224}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 119
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 205
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 328
+      Script: {instanceID: 0}
+    - Class: 329
+      Script: {instanceID: 0}
+  scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 4bc4346a71a8df53a6b106f68ef3a190
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 3c08375166df118bd1801438fc36b92f
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: 626925ef558787b2d85c809198164d19
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSparksRTUnity
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.CrossPlatform
+    className: XPAnchor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: Anchor
+  - hash:
+      serializedVersion: 2
+      Hash: 3a950ad61f4f504addf564945400f1e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloorIllusionController
+  - hash:
+      serializedVersion: 2
+      Hash: 5bd9a19c7b5f76c563418e28f48a561b
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkLobbyPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: e7a73f5f78ba6445195ec23b74a1ce2d
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GameSparks.Platforms
+    className: DefaultPlatform
+  - hash:
+      serializedVersion: 2
+      Hash: 269133bf6785f1e198f98a5b4b08eda1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WorldOriginHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 472c1d92b5c6ea260d42bb58da861695
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloorIllusionController_PitMover
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.Common
+    className: SafeAreaScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 35c10f81b313f87f84c26ed970ec2a0e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloorCaptureController
+  - hash:
+      serializedVersion: 2
+      Hash: 04e4a8b0447477cc4e933d9e5311188f
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: ArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 16967ff3c4e32bf02748605393f74519
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.AugmentedImage
+    className: AugmentedImageExampleController
+  - hash:
+      serializedVersion: 2
+      Hash: 72712369a7c681ad84fc255a5ec0b333
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 499fd23433e68e265d153aa6b95d0047
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: eafb77726b67b7571818a7210a3ce11e
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkIdentity
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: abf1930d8126d0b2e00e9449129a0190
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 8e0313c6f5e2ce35991fec2d64f8eaab
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: f20f8b77765e2f99f81ce709e90b09b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProjectorFieldScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: ASLObject
+  - hash:
+      serializedVersion: 2
+      Hash: 234235b9fb07320d11497e08a726cc56
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARRaycastManager
+  - hash:
+      serializedVersion: 2
+      Hash: ad9173d3a69d99153f38ed4b62226129
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkTransform
+  - hash:
+      serializedVersion: 2
+      Hash: febfb1502f3a7d3d25fe0694a27ac6e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.CloudAnchors
+    className: NetworkManagerUIController
+  - hash:
+      serializedVersion: 2
+      Hash: 5588741d72125b761f88d144ad9fac53
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: ASLSceneLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 4cb443ffb7b54a755d9852ae91684f7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ComputerVision
+    className: ComputerVisionController
+  - hash:
+      serializedVersion: 2
+      Hash: 7ab0e790220bdca831fdd886b339039d
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 9fe681ac7eebdadb4d38eab0167f6eea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: LobbyManager
+  - hash:
+      serializedVersion: 2
+      Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 0dbc3be398b4869a5c8d0d8481ee402c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: LayoutElement
+  - hash:
+      serializedVersion: 2
+      Hash: 18c222bef9ae745ce69ddde9b74337ca
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 98004da27c51fe0251c9ff6c1714d1a3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloorIllusionController_Pit
+  - hash:
+      serializedVersion: 2
+      Hash: 1e9c409e29cdc019c5521daf5eb17010
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ComputerVision
+    className: TextureReader
+  - hash:
+      serializedVersion: 2
+      Hash: 7f5c55cb7b3151ce240452eb85500d32
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPlaneManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3f0b469d844365c00a63de0437c9b29e
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkProximityChecker
+  - hash:
+      serializedVersion: 2
+      Hash: cf9f5cf2c3145a37ac07f00e50e460f9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: RectMask2D
+  - hash:
+      serializedVersion: 2
+      Hash: bc36cfe008859a4f07b3da2ff0b5e005
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.AugmentedFaces
+    className: AugmentedFacesExampleController
+  - hash:
+      serializedVersion: 2
+      Hash: 4e9333594897a1fb8b136ad2eae996c7
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARReferencePoint
+  - hash:
+      serializedVersion: 2
+      Hash: 52bcb9c2a78bdd8d98a59e915c346e75
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: TransitionArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: ManipulationSystem
+  - hash:
+      serializedVersion: 2
+      Hash: aba7b2852ef61d175dd9602e7723d5e5
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: d251bf88db6c95a6b1aa0b69298da9ef
+    assemblyName: UnityEngine.SpatialTracking.dll
+    namespaceName: UnityEngine.SpatialTracking
+    className: TrackedPoseDriver
+  - hash:
+      serializedVersion: 2
+      Hash: caa533b001ae39b864ba8425019e2268
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 72c3a3bf16e34620934073ef94cabbe1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: EnvironmentalLight
+  - hash:
+      serializedVersion: 2
+      Hash: 70b5990d93842e2357518f44237e7f47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.Common
+    className: PlaneDiscoveryGuide
+  - hash:
+      serializedVersion: 2
+      Hash: e8733e39efa851172df1c9eaef062265
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPlane
+  - hash:
+      serializedVersion: 2
+      Hash: 58406096cbb22aa5cbd99b0a1575f0e1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: QuickConnect
+  - hash:
+      serializedVersion: 2
+      Hash: cc4274b586df3c02688bac01b88bd16c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: f3d1807a613ed4b83d9c90e8aa51a8a1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.HelloAR
+    className: HelloARController
+  - hash:
+      serializedVersion: 2
+      Hash: b8a5e8091ab0b8861d2add371082c5e0
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: b6337c40e664256917540c23828614b4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.AugmentedImage
+    className: AugmentedImageVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.WindowsMR.dll
+    namespaceName: UnityEngine.EventSystems
+    className: HoloLensInput
+  - hash:
+      serializedVersion: 2
+      Hash: 0451019579614cc079b33f5be5df7244
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.CloudAnchors
+    className: LocalPlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 6a1740751fcbe3cc995dbcc04a956d01
+    assemblyName: Unity.XR.WindowsMR.dll
+    namespaceName: UnityEngine.EventSystems
+    className: HoloLensInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 265cf27ba050d55ff33a8acab4ded6c0
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkLobbyManager
+  - hash:
+      serializedVersion: 2
+      Hash: 5887ef1bc706b22b773d253fd443ceef
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkTransformVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 1acefc44fcd387a1af0dfaddd3578565
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InitialController
+  - hash:
+      serializedVersion: 2
+      Hash: b818207c0b8a805931f7a7989870283e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: ARCoreBackgroundRenderer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPlaneMeshVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: b3ab2106268377ffe25dd18ac23dca28
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_Asset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeleteObject
+  - hash:
+      serializedVersion: 2
+      Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 269133bf6785f1e198f98a5b4b08eda1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.CloudAnchors
+    className: ARCoreWorldOriginHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkCallbacks
+  - hash:
+      serializedVersion: 2
+      Hash: 21e871d89bbce53c038fc75ad1b7c7f3
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: d80decf816b39c56d5f370970ca63fdc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.Common
+    className: PointcloudVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloud
+  - hash:
+      serializedVersion: 2
+      Hash: ea2015d5aaa8af4d46839d759c8a2f93
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CustomFloorCaptureController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: a0e43ae95c78c4a3bc3b49464017b1d5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnchorController
+  - hash:
+      serializedVersion: 2
+      Hash: 1ab92b1501bff4203df13dd5880207c1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.AugmentedFaces
+    className: ARCoreAugmentedFaceRig
+  - hash:
+      serializedVersion: 2
+      Hash: 4fd8bf02e3089425d3502e26c44ba31a
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 309c0efd4456d6e902823ab02606508d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: ElevationManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: 57e1077da17ce131f08bac81a876637a
+    assemblyName: Unity.XR.WindowsMR.dll
+    namespaceName: UnityEngine.XR.WSA
+    className: SpatialMappingRenderer
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: feb9a5a121d15fa3654d4e50a5233045
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: RotationManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: ObjectManipulationController
+  - hash:
+      serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkStartPosition
+  - hash:
+      serializedVersion: 2
+      Hash: 1ab92b1501bff4203df13dd5880207c1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.AugmentedFaces
+    className: ARCoreAugmentedFaceMeshFilter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloudParticleVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: InstantPreviewTrackedPoseDriver
+  - hash:
+      serializedVersion: 2
+      Hash: dee9174fd158bb09af9191e98e85a290
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.Common
+    className: RawImageVideoPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.CloudAnchors
+    className: StarController
+  - hash:
+      serializedVersion: 2
+      Hash: d8967d9f3786748a827ab827c3a3f814
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARSession
+  - hash:
+      serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 35a9693c388776aaf487636491a20f11
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: e1300922cc039f41ab46a47f4cb05898
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_Settings
+  - hash:
+      serializedVersion: 2
+      Hash: 18c222bef9ae745ce69ddde9b74337ca
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: c36d1b2deafa5aece5cc8b07e85fcab6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: ARCoreSession
+  - hash:
+      serializedVersion: 2
+      Hash: 4131f55e397831de9250432be38e28cb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PickupObject
+  - hash:
+      serializedVersion: 2
+      Hash: 318c6c13a19c9fac98135ae14889de1b
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkMigrationManager
+  - hash:
+      serializedVersion: 2
+      Hash: 46e31b10dbb047f5b3aadcd320535b92
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: ARCoreSessionConfig
+  - hash:
+      serializedVersion: 2
+      Hash: fcc7ae5ff1b0c9cad5865d5b6cee016a
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARReferencePointManager
+  - hash:
+      serializedVersion: 2
+      Hash: edb986b6ebeb66208841352d63987938
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.CloudAnchors
+    className: CloudAnchorsExampleController
+  - hash:
+      serializedVersion: 2
+      Hash: d020b25620e1bf9e7efce26f6542ae57
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GroupMovement
+  - hash:
+      serializedVersion: 2
+      Hash: 40eab39826f66889566d3a3e6ef95673
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: TranslationManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PitSpinner
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GameSparks.Platforms
+    className: WebSocketController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ASLFloorController
+  - hash:
+      serializedVersion: 2
+      Hash: ca2a58dd7363525cbd2f65b2a150b41b
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARCameraManager
+  - hash:
+      serializedVersion: 2
+      Hash: b2b132dc90e492c6ec4f808537943dae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloorUIController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 924a22e2fa5027638ab7f67f56c272c6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSparksTestUI
+  - hash:
+      serializedVersion: 2
+      Hash: b640dcae08889dea4d87e95a455bbf6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: AugmentedImageDatabase
+  - hash:
+      serializedVersion: 2
+      Hash: b18a6f4c0da8b8a2138aafd395ae5214
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: GameSparksManager
+  - hash:
+      serializedVersion: 2
+      Hash: 746dd34481f4a6772249bdb6d9f13f41
+    assemblyName: Unity.XR.WindowsMR.dll
+    namespaceName: UnityEngine.XR.WSA
+    className: SpatialMappingCollider
+  - hash:
+      serializedVersion: 2
+      Hash: 3b760e6526e13f7504f59e210145899a
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 16dacd04869a876ea4bea0d1d2e77e34
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloudManager
+  - hash:
+      serializedVersion: 2
+      Hash: 14cb302be190eb67bf7fb5f1aab28ce0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: PawnManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: dea189cf620f6ac37dd27d491e1234b1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.Common
+    className: DetectedPlaneGenerator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: GameController
+  - hash:
+      serializedVersion: 2
+      Hash: e1c35cdce946e9da77fe80a39c261608
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARSessionOrigin
+  - hash:
+      serializedVersion: 2
+      Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools
+    className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: d4bfd8812a26fbd4b7d4d44bf640ade0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSparksUnity
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.Common
+    className: DetectedPlaneVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloudMeshVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 1db723b554a361a812257e508051085f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore
+    className: ARCoreCameraConfigFilter
+  - hash:
+      serializedVersion: 2
+      Hash: 1dcb82730d983b77cec736c6ef19f814
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkDiscovery
+  - hash:
+      serializedVersion: 2
+      Hash: 893dbdbfe611d62e230a686ea89f1efd
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: SwingArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 8118d37154f214ab0486c7b2852792b7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: ScaleManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ComputerVision
+    className: PointClickHandler
+  - hash:
+      serializedVersion: 2
+      Hash: d791aa6007fa3640be1164ea75bb087d
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARInputManager
+  - hash:
+      serializedVersion: 2
+      Hash: e6ae40841db498b6e673877ac45ad208
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 788c607f621cd6d8517b354726b5ce49
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CloudAnchorController
+  - hash:
+      serializedVersion: 2
+      Hash: 5b9f5299076e98f60b8cb3a8a6c053aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: ASLSliderWithEcho
+  - hash:
+      serializedVersion: 2
+      Hash: df434544c9f7b33d1cc7e635b180d279
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TextMeshPro
+  - hash:
+      serializedVersion: 2
+      Hash: 3165968ba45c74472d279ba04455fccb
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 20d20168517d1c0e098918311aa95bbb
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARCameraBackground
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: PlayModeRunnerCallback
+  - hash:
+      serializedVersion: 2
+      Hash: a6be390312032ba0856f81fc3c448644
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.ObjectManipulation
+    className: SelectionManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 9b895dcabbc1faf095c000c32d471fd0
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkTransformChild
+  - hash:
+      serializedVersion: 2
+      Hash: caa533b001ae39b864ba8425019e2268
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: e0ee4b3d4e27318934cc940a969d3d96
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkManagerHUD
+  - hash:
+      serializedVersion: 2
+      Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 8649814970b42d345b89944b862453cc
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SubMesh
+  - hash:
+      serializedVersion: 2
+      Hash: 20eeaeae829475b5e354d1f626c51a2b
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner
+    className: PlaymodeTestsController
+  - hash:
+      serializedVersion: 2
+      Hash: 2aeeec1b1a144c469cd2d37776bc2315
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 19278ac86eba7b17e1f9ac5261c43bfa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSparksSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 748dd2a2a28da4e618912da5ac45684b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: StandaloneInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 21e871d89bbce53c038fc75ad1b7c7f3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: GoogleARCore.Examples.CloudAnchors
+    className: CloudAnchorsNetworkManager
+  - hash:
+      serializedVersion: 2
+      Hash: aa88ae22474df55295327e4ee99e5a24
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: ad41d88b25b44f28b750ac99ea2b6899
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloorIllusionController_Chunk
+  - hash:
+      serializedVersion: 2
+      Hash: 7072231382eb3c4871b3dd75ad0227e1
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
+  - hash:
+      serializedVersion: 2
+      Hash: 0fd6822f6177297bd0eb4d83cc7a9030
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 149f1637b11502bcb0437db4c5c56ba3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: CreateObject_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 3cd085323f727691fffda2d6df70e680
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: SliderController
+  - hash:
+      serializedVersion: 2
+      Hash: 4f888b3cb674578c0ba2843acf9eebff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp1_MainController
+  - hash:
+      serializedVersion: 2
+      Hash: 20f9476ac39e3e710d64fd83b922f08f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp2_XformControl
+  - hash:
+      serializedVersion: 2
+      Hash: 5cb10a580b9f3a48bde034e8a665eaef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp1_TheWorld
+  - hash:
+      serializedVersion: 2
+      Hash: e6100e7ca7b72cd38a41bb9e1e612c9f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp1_MovementBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 2969389958928f7e73cdf5b133e792be
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_LineEndPt
+  - hash:
+      serializedVersion: 2
+      Hash: e1488b52d1ed35cd6c79d7380d31e49a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_EnemySpawnSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 5b9f5299076e98f60b8cb3a8a6c053aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp2_SliderWithEcho
+  - hash:
+      serializedVersion: 2
+      Hash: 268973406b3dede33c7669ea93ddc3e9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: Send2DTexture_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 4327585bf30c3900229050c868cb485d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: StressTesting
+    className: StressTest_FightOverFiveObjectsGUIController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_WayPoint
+  - hash:
+      serializedVersion: 2
+      Hash: 5b9f5299076e98f60b8cb3a8a6c053aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_SliderWithEcho
+  - hash:
+      serializedVersion: 2
+      Hash: 5a264cc9d9c2ae4f642f5fd1c42da4b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_EggSpawnSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_EggBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 87733d5f5a5ca845839e42968a7aa3ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp2_ColorSupport
+  - hash:
+      serializedVersion: 2
+      Hash: b20f179254e284e642068904f452af41
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp2_DropDownCreate
+  - hash:
+      serializedVersion: 2
+      Hash: ef04f9bb8c5e9953e127c937461eba0a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: StressTesting
+    className: StressTest_FightOverFiveObjectsController
+  - hash:
+      serializedVersion: 2
+      Hash: e4bad4803569c32750ac841d6f8a927b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: TransformObjectViaWorldSpace_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 749635119b1270ee4a14b97d33a2d09f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: AR_CSS451_Mp2_XformControl
+  - hash:
+      serializedVersion: 2
+      Hash: 1902acff47894f46a0a1e9606fad2755
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp2_MainController
+  - hash:
+      serializedVersion: 2
+      Hash: e93dc0fd1027a8f42509d1f9e9f30574
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp1_DropDownCreate
+  - hash:
+      serializedVersion: 2
+      Hash: c6c51014b5cacd93bca4f749e3f2ea2f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: LoadScene_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 5b9f5299076e98f60b8cb3a8a6c053aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: AR_CSS451_Mp2_SliderWithEcho
+  - hash:
+      serializedVersion: 2
+      Hash: 2a390b6b4198d7af3fa71b6fdb5b9fe9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_MainController
+  - hash:
+      serializedVersion: 2
+      Hash: ecd0e72b0dd3c86baa30b383a6f73ba8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: StressTesting
+    className: StressTest_150_ASLObjects_ObjectColorSupport
+  - hash:
+      serializedVersion: 2
+      Hash: 563b0dbccaa586d9eaa9f0d4d2000f33
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: StressTesting
+    className: StressTest_ButtonManager
+  - hash:
+      serializedVersion: 2
+      Hash: f4c5da55a1a2f3b5443463a545e98b4d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: AR_CSS451_Mp2_ButtonManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_WayPointSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: StressTesting
+    className: StressTest_150_ASLObjects_Controller
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_EnemyBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 4fe5b0662e7ae94eaca4900254f85323
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_HeroBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 87733d5f5a5ca845839e42968a7aa3ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: AR_CSS451_Mp2_ColorSupport
+  - hash:
+      serializedVersion: 2
+      Hash: 8b1b64d9b82390fd35436c496167d610
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp2_TheWorld
+  - hash:
+      serializedVersion: 2
+      Hash: c1c7b1be22937548ca180e92862d5f42
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: AR_CSS451_Mp2_TheWorld
+  - hash:
+      serializedVersion: 2
+      Hash: 9818d9af849493f92e65185523d31705
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_XfromControl
+  - hash:
+      serializedVersion: 2
+      Hash: 16bb05a10513776de26e5d397f035986
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS385_Mp2_GlobalBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: e4bad4803569c32750ac841d6f8a927b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: TransformObjectViaLocalSpace_Example
+  - hash:
+      serializedVersion: 2
+      Hash: b32cc0e2b87ab9233257bf34c5a31e92
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_TheWorld
+  - hash:
+      serializedVersion: 2
+      Hash: 8c8d4ac58bc6eba6953906014e8459ad
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: AR_CSS451_Mp2_DropDownCreate
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_LineSegment
+  - hash:
+      serializedVersion: 2
+      Hash: d5ca2e92100afa4a1b9a8f78b22c0ed7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: AR_CSS451_Mp2_MainController
+  - hash:
+      serializedVersion: 2
+      Hash: 99f9540680d35dd7c2301f96041dc5d6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_Plane
+  - hash:
+      serializedVersion: 2
+      Hash: d595f3006f8932b1bda68cc401373190
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: ObjectToClaim_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 269133bf6785f1e198f98a5b4b08eda1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ASL
+    className: ARWorldOriginHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 7c7e313046393bf676536ca15db5f252
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_UILineSegment
+  - hash:
+      serializedVersion: 2
+      Hash: 11090b1d89edad01034eeeaf594d2205
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: SendFloat4_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: StressTesting
+    className: StressTest_CreateDelete_Controller
+  - hash:
+      serializedVersion: 2
+      Hash: 68b8cfdadfa84f3f1de335fa584dd121
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: DeleteObject_Example
+  - hash:
+      serializedVersion: 2
+      Hash: f06cf792459835c691c53bac396d12a9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: ColorObject_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 469ace5c46461b52dc4a85afaf944f08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SimpleDemos
+    className: ARCloudAnchor_Example
+  - hash:
+      serializedVersion: 2
+      Hash: 57d4cd17dcc3b501c45ded921471b62f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mps
+    className: CSS451_Mp3_TravelingBall
+  platform: 13
+  scenePathNames:
+  - Assets/UserFiles/AR_Illusions.unity
+  - Assets/ASL/ASL_Scenes/ASL_LobbyScene.unity
+  - Assets/ASL/ASL_Scenes/ASL_SceneLoader.unity
+  playerPath: C:/Users/Jacob/Downloads/ASL/AR_Illusion.apk

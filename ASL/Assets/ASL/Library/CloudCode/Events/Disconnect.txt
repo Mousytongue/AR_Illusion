@@ -1,0 +1,10 @@
+// ====================================================================================================
+//
+// Cloud Code for Disconnect, write your code here to customize the GameSparks platform.
+//
+// For details of the GameSparks Cloud Code API see https://docs.gamesparks.com/
+//
+// ====================================================================================================
+var matchCode = Spark.getData().MatchShortCode;
+//Disconnect the player that calls this event from the passed in match
+Spark.getMultiplayer().cancelMatchmaking(Spark.getPlayer(), matchCode, "");

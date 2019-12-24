@@ -1,0 +1,20 @@
+// ====================================================================================================
+//
+// Cloud Code for GetMatchNames, write your code here to customize the GameSparks platform.
+//
+// For details of the GameSparks Cloud Code API see https://docs.gamesparks.com/
+//
+// ====================================================================================================
+
+var matchShortCodes = Spark.getData().MatchName;
+
+var names = [];
+//Set the data we want to pass in an event
+for (var i = 0; i < matchShortCodes.length; i++)
+{
+    var eventAttributeMatchNames = Spark.getConfig().getMatchConfig(matchShortCodes[i]).getName();
+    names.push(eventAttributeMatchNames);
+}
+//The first parameter will be the name of the json object - needs to match whatever is in JSONConverter.cs if you plan deserializing (converting json object to text) in scripts
+//The second parameter is the data that is going to be sent
+Spark.setScriptData("m_Names", names);

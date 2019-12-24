@@ -1,0 +1,13 @@
+// ====================================================================================================
+//
+// Cloud Code for GetMatches, write your code here to customize the GameSparks platform.
+//
+// For details of the GameSparks Cloud Code API see https://docs.gamesparks.com/
+//
+// ====================================================================================================
+
+//Set the data we want to pass in an event
+var eventAttributeMatchConfigs = Spark.getConfig().getMatchConfigs();
+
+//Set the script data that can then be accessed from our Unity scripts using the name of our variable and the variable itself. 
+Spark.setScriptData("eventAttributeMatchConfigs", eventAttributeMatchConfigs);

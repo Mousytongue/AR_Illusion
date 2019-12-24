@@ -1,0 +1,394 @@
+// ====================================================================================================
+//
+// Cloud Code for ASLSetup, write your code here to customize the GameSparks platform.
+//
+// For details of the GameSparks Cloud Code API see https://docs.gamesparks.com/
+//
+// ====================================================================================================
+
+//How to create debug statements:
+//RTSession.getLogger().debug("This Is A Debug Message...");
+
+//As of 2/27/2019 this list MUST match the same variable in GameSparksManager.
+var OpCode = Object.freeze(
+{
+    "BadValue":0, //OpCodes cannot be 0. Thus this is the filler value for the enum in the c# code
+    "ChatMessage":1,
+    "LocalTransformUpdate":2,
+    "LocalRotationUpdate":3,
+    "LocalScaleUpdate":4,
+    "ClaimObject":5,
+    "SpawnPrimitive":6,
+    "SetObjectColor":7,
+    "DeleteObject":8,
+    "SetObjectID":9,
+    "LoadStartScene":10,
+    "ServerSetId":11,
+    "ClaimObjectWithResponse":12,
+    "ClaimObjectResponse":13,
+    "RejectClaim":14,
+    "ReleaseClaim":15,
+    "SetFloat":16,
+    "SpawnPrefab":17,
+    "AnchorPointUpdate": 18,
+    "LoadScene":19
+});
+//As of 2/27/2019 this list MUST match the same variable in GameController.
+var DataCode = Object.freeze(
+{
+    "BadValue":0, //Data codes cannot be 0. Thus this is the filler value for the enum in the c# code
+    "Id":1,
+    "LocalPosition":2,
+    "LocalRotation":3,
+    "LocalScale":4,
+    "PrimitiveType":5,
+    "ParentId":6,
+    "MyColor":7,
+    "OpponentColor":8,
+    "Player":9,
+    "OldPlayer":10,
+    "PlayerPeerId":11,
+    "MyFloats":12,
+    "PrefabName":13,
+    "ClaimRecoveryFunctionName":14,
+    "ClaimRecoveryClassName":15,
+    "InstantiatedGameObjectClassName":16,
+    "InstantiatedGameObjectFunctionName":17,
+    "AnchorPoint":18,
+    "SceneName":19
+});
+//Holds all of the ASLObjects, with the value being return equal to the current owner of that object
+var ASLObjectsOwner = [];
+//Holds all of the ASLObjects, with the value being return equal to the true if another user is trying to claim that object and false if not
+var ASLObjectsOutstandingClaims = [];
+//Holds all of the ASLObjects, with the value being return equal to the current user who is trying to claim the object
+var ASLObjectClaimer = [];
+//Used in the beginning to make sure every player is connected
+var playersJoined = [];
+//The amount of players in the session
+var totalPlayers = 0;
+
+RTSession.onPlayerConnect(function(player)
+{
+    
+    if (totalPlayers === 0)
+    {
+        RTSession.newRequest().createMatchDetailsRequest()
+            .setMatchId(RTSession.getSessionId())
+            .setPlayerId(player.getPlayerId())
+            .setRealtimeEnabled(true)
+            .send(function(_response)
+            {
+                totalPlayers = _response.opponents.length + 1; //Opponent list does not include us, thus +1
+            });
+    }
+    
+    //First check to see if the player has already joined the match
+    if (!contains(player.getPeerId(), playersJoined))
+    {
+        playersJoined.push(player.getPeerId()); //Add the player if they're not already in
+    }
+    
+    //Next check to see the max (or min) number of players has joined that match
+    if (playersJoined.length === totalPlayers)
+    {
+         //Send an empty packet to all players signaling the start of the session
+        RTSession.newPacket().setOpCode(OpCode.LoadStartScene).setTargetPeers().send();
+    }
+    
+    
+});
+
+//This function will be triggered when any packet with the op-code ServerSetId reaches the server //
+//Opcode of ServerSetId means an object needs to sync its id with everyone else
+//The way it is currently set up, it will only recognize the player with a peerId of 1 (the host). Since this function is only called
+//upon game start, as all objects that are created dynamically have their id set another way, no issue should arrive with another
+//player needing to set an id with this packet.
+RTSession.onPacket(OpCode.ServerSetId, function(packet)
+{
+    //If we are the "host" set up the id for the objects that were loaded in with the scene for everyone
+    if (packet.getSender().getPeerId() == 1)
+    {
+        var rtData = RTSession.newData(); // create a new RTData object
+        var guid = uuidv4();
+        rtData.setString(DataCode.Id, guid)
+        AddASLObject(guid, "Server");
+        RTSession.newPacket().setOpCode(OpCode.SetObjectID).setData(rtData).send();
+    }
+    else //If we aren't the host then cancel this packet
+    {
+        return false;
+    }
+    
+    // construct a new RT-packet with op-code  using the rt-data we set
+    
+});
+
+//Peak at the spawn primitive packet going out to add the new object to our ASLObjects lists
+RTSession.onPacket((OpCode.SpawnPrimitive), function(packet)
+{
+    AddASLObject(packet.getData().getString(DataCode.Id), "Server");
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setNumber(DataCode.PrimitiveType, packet.getData().getNumber(DataCode.PrimitiveType));
+    rtData.setFloatArray(DataCode.LocalPosition, packet.getData().getFloatArray(DataCode.LocalPosition));
+    rtData.setFloatArray(DataCode.LocalRotation, packet.getData().getFloatArray(DataCode.LocalRotation));
+    rtData.setString(DataCode.ParentId, packet.getData().getString(DataCode.ParentId));
+    rtData.setString(DataCode.InstantiatedGameObjectClassName, packet.getData().getString(DataCode.InstantiatedGameObjectClassName));
+    rtData.setString(DataCode.InstantiatedGameObjectFunctionName, packet.getData().getString(DataCode.InstantiatedGameObjectFunctionName));
+    rtData.setString(DataCode.ClaimRecoveryClassName, packet.getData().getString(DataCode.ClaimRecoveryClassName));
+    rtData.setString(DataCode.ClaimRecoveryFunctionName, packet.getData().getString(DataCode.ClaimRecoveryFunctionName));
+    rtData.setString(DataCode.Player, packet.getSender().getPlayerId());
+    RTSession.newPacket().setOpCode(OpCode.SpawnPrimitive).setData(rtData).setReliable(true).send();
+    return false;
+    
+});
+
+//Peak at the spawn primitive packet going out to add the new object to our ASLObjects lists
+RTSession.onPacket((OpCode.SpawnPrefab), function(packet)
+{
+    
+    AddASLObject(packet.getData().getString(DataCode.Id), "Server");
+        var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setString(DataCode.PrefabName, packet.getData().getString(DataCode.PrefabName));
+    rtData.setFloatArray(DataCode.LocalPosition, packet.getData().getFloatArray(DataCode.LocalPosition));
+    rtData.setFloatArray(DataCode.LocalRotation, packet.getData().getFloatArray(DataCode.LocalRotation));
+    rtData.setString(DataCode.ParentId, packet.getData().getString(DataCode.ParentId));
+    rtData.setString(DataCode.InstantiatedGameObjectClassName, packet.getData().getString(DataCode.InstantiatedGameObjectClassName));
+    rtData.setString(DataCode.InstantiatedGameObjectFunctionName, packet.getData().getString(DataCode.InstantiatedGameObjectFunctionName));
+    rtData.setString(DataCode.ClaimRecoveryClassName, packet.getData().getString(DataCode.ClaimRecoveryClassName));
+    rtData.setString(DataCode.ClaimRecoveryFunctionName, packet.getData().getString(DataCode.ClaimRecoveryFunctionName));
+    rtData.setString(DataCode.Player, packet.getSender().getPlayerId());
+    RTSession.newPacket().setOpCode(OpCode.SpawnPrefab).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+//Assign the sever the owner of the object now that a user has given it up
+RTSession.onPacket((OpCode.ReleaseClaim), function(packet)
+{
+    ASLObjectsOwner[packet.getData().getString(DataCode.Id)] = "Server";
+    return false; //No need to send this packet to other users
+});
+
+RTSession.onPacket(OpCode.ClaimObject, function(packet)
+{
+    if (packet.getData().getString(DataCode.Id) == "")
+    {
+        var rtData = RTSession.newData();
+        rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+        RTSession.newPacket().setOpCode(OpCode.RejectClaim).setData(rtData).setReliable(true).setTargetPeers(packet.getSender().getPeerId()).send();
+        return false;
+    }
+    
+    if (!ASLObjectsOutstandingClaims[packet.getData().getString(DataCode.Id)]) //If no outstanding claims - 
+    {
+        ASLObjectsOutstandingClaims[packet.getData().getString(DataCode.Id)] = true;
+        ASLObjectClaimer[packet.getData().getString(DataCode.Id)] = packet.getSender().getPlayerId();
+       //If the current owner is the 'server' or ourselves, then just "remind" everybody.
+        if (ASLObjectsOwner[packet.getData().getString(DataCode.Id)] === "Server" || ASLObjectsOwner[packet.getData().getString(DataCode.Id)] === packet.getSender().getPlayerId())
+        {
+            //Send new owner and object id
+            UpdateObjectOwnership(packet.getSender().getPlayerId(), packet.getData().getString(DataCode.Id));
+        }
+        else //We wait for the previous owner to inform us they gave up the object so we can successfully modify it
+        {
+            //Send old owner, new owner, and object id
+            UpdateObjectOwnershipWithResponse(ASLObjectsOwner[packet.getData().getString(DataCode.Id)], packet.getSender().getPlayerId(), 
+                                                            packet.getSender().getPeerId(), packet.getData().getString(DataCode.Id));
+        }
+    }
+    else //There is an outstanding claim - person who sent claim should be notified of their rejection
+    {
+        var rtData = RTSession.newData();
+        rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+        RTSession.newPacket().setOpCode(OpCode.RejectClaim).setData(rtData).setReliable(true).setTargetPeers(packet.getSender().getPeerId()).send();
+    }
+
+   return false; // cancel this packet
+   
+});
+
+RTSession.onPacket((OpCode.ClaimObjectResponse), function(packet)
+{
+    ASLObjectsOwner[packet.getData().getString(DataCode.Id)] = packet.getData().getString(DataCode.Player); 
+    ASLObjectsOutstandingClaims[packet.getData().getString(DataCode.Id)] = false;
+    ASLObjectClaimer[packet.getData().getString(DataCode.Id)] = "None";
+});
+
+//Local Transform
+RTSession.onPacket((OpCode.LocalTransformUpdate), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setFloatArray(DataCode.LocalPosition, packet.getData().getFloatArray(DataCode.LocalPosition));
+    RTSession.newPacket().setOpCode(OpCode.LocalTransformUpdate).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+//Local Rotation
+RTSession.onPacket((OpCode.LocalRotationUpdate), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setFloatArray(DataCode.LocalRotation, packet.getData().getFloatArray(DataCode.LocalRotation));
+    RTSession.newPacket().setOpCode(OpCode.LocalRotationUpdate).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+//Local Scale
+RTSession.onPacket((OpCode.LocalScaleUpdate), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setFloatArray(DataCode.LocalScale, packet.getData().getFloatArray(DataCode.LocalScale));
+    RTSession.newPacket().setOpCode(OpCode.LocalScaleUpdate).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+//Color
+RTSession.onPacket((OpCode.SetObjectColor), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setFloatArray(DataCode.MyColor, packet.getData().getFloatArray(DataCode.MyColor));
+    rtData.setFloatArray(DataCode.OpponentColor, packet.getData().getFloatArray(DataCode.OpponentColor));
+    rtData.setString(DataCode.Player, packet.getSender().getPlayerId());
+    RTSession.newPacket().setOpCode(OpCode.SetObjectColor).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+//Anchor Point
+RTSession.onPacket((OpCode.AnchorPointUpdate), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setString(DataCode.AnchorPoint, packet.getData().getString(DataCode.AnchorPoint));
+    RTSession.newPacket().setOpCode(OpCode.AnchorPointUpdate).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+//Delete Object
+RTSession.onPacket((OpCode.DeleteObject), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    RTSession.newPacket().setOpCode(OpCode.DeleteObject).setData(rtData).setReliable(true).send();
+    
+    //Delete on Relay Server
+    delete ASLObjectsOwner[packet.getData().getString(DataCode.Id)];
+    delete ASLObjectClaimer[packet.getData().getString(DataCode.Id)];
+    delete ASLObjectsOutstandingClaims[packet.getData().getString(DataCode.Id)];
+    
+    return false;
+});
+
+//Load Scene
+RTSession.onPacket((OpCode.LoadScene), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.SceneName, packet.getData().getString(DataCode.SceneName));
+    RTSession.newPacket().setOpCode(OpCode.LoadScene).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+//Set Float
+RTSession.onPacket((OpCode.SetFloat), function(packet)
+{
+    var rtData = RTSession.newData();
+    rtData.setString(DataCode.Id, packet.getData().getString(DataCode.Id));
+    rtData.setFloatArray(DataCode.MyFloat, packet.getData().getFloatArray(index)(DataCode.MyFloats));
+    RTSession.newPacket().setOpCode(OpCode.SetFloat).setData(rtData).setReliable(true).send();
+    return false;
+});
+
+
+function UpdateObjectOwnership(_playerId, _objectId)
+{
+    var rtData = RTSession.newData(); // create a new RTData object
+    rtData.setString(DataCode.Player, _playerId);
+    rtData.setString(DataCode.Id, _objectId);
+    //Send claim to all players
+    RTSession.newPacket().setOpCode(OpCode.ClaimObject).setData(rtData).setReliable(true).send();
+    ASLObjectsOwner[_objectId] = _playerId; //Server update owner 
+    ASLObjectsOutstandingClaims[_objectId] = false; //Others can now claim this object
+    ASLObjectClaimer[_objectId] = "None"; //No one is attempting to claim this object anymore
+    
+};
+
+function UpdateObjectOwnershipWithResponse(_oldPlayer, _playerId, _peerId, _objectId)
+{
+    var rtData = RTSession.newData(); // create a new RTData object
+    rtData.setString(DataCode.OldPlayer, _oldPlayer);
+    rtData.setNumber(DataCode.PlayerPeerId, _peerId);
+    rtData.setString(DataCode.Player, _playerId);
+    rtData.setString(DataCode.Id, _objectId);
+    //Send claim to all players
+    RTSession.newPacket().setOpCode(OpCode.ClaimObjectWithResponse).setData(rtData).setReliable(true).send();
+};
+
+function AddASLObject(_id, _player)
+{
+    ASLObjectsOwner[_id] = _player;
+    ASLObjectsOutstandingClaims[_id] = false;
+    ASLObjectClaimer[_id] = "None";
+}
+
+//This is a simple method that just checks if an element is in an array or not
+function contains(a, obj)
+{
+    for (var i = 0; i < a.length; i++)
+    {
+        if (a[i] === obj)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+//Function taken from here: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#comment16687461_105074
+//This may not produce an exactly random guid, but it should produce a unique enough one for our scenario. 
+function uuidv4() 
+{
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+//When a player disconnects set all the objects they own to be owned by the Server.
+RTSession.onPlayerDisconnect(function(player)
+{
+    var playerPlayerId = player.getPlayerId(); // gets sender's playerID
+    var key;
+    for (key in ASLObjectsOwner)
+    {
+        if (ASLObjectsOwner[key] === playerPlayerId)
+        {
+            ASLObjectsOwner[key] = "Server"
+            //If there was an outstanding claim on this object, the sender will never get a response because the user disconnected.
+            //To solve this, we keep track of who has an outstanding claim and then send that person directly a response
+            //letting them know they own the object. Since outstanding claim is true, no other user can claim this object at this time
+            //So this object is "locked" and no conflict will arise between the claimer and other potential claimers
+            if (ASLObjectsOutstandingClaims[key] == true)
+            {
+                UpdateObjectOwnership(ASLObjectClaimer[key], key);
+            }
+        }
+    }
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
